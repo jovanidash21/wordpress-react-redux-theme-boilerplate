@@ -16,5 +16,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "4.0.0-beta"
+  }
 }
