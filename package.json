@@ -10,7 +10,8 @@
     "url": "https://github.com/jovanidash21/wordpress-react-redux-theme-boilerplate.git"
   },
   "dependencies": {
-    "node-sass": "^4.5.3"
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1"
   },
   "devDependencies": {
     "asset-builder": "^1.1.0",
