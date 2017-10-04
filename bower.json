@@ -18,5 +18,12 @@
   ],
   "dependencies": {
     "bootstrap": "4.0.0-beta"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js"
+      ]
+    }
   }
 }
