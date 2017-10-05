@@ -27,8 +27,7 @@ var writeToManifest = function(directory) {
 
 module.exports = {
   dev: {
-    host: 'localhost',
-    port: 3000,
+    url: 'http://example.dev/',
     watchPort: 9000
   },
   enabled: {

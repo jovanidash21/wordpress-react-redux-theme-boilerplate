@@ -2,10 +2,10 @@ var gulp = require('gulp');
 var config = require('../config');
 var browserSync = require('browser-sync').create();
 
-gulp.task('watch', ['webserver'], function () {
+gulp.task('watch', function () {
   browserSync.init({
     files: ['{dist}/**/*.html', '*.html'],
-    proxy: config.dev.host + ':' + config.dev.port,
+    proxy: config.dev.url,
     port: config.dev.watchPort
   });
   gulp.watch([config.assets + 'styles/**/*'], ['styles']);
