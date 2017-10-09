@@ -17,7 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "4.0.0-beta"
+    "bootstrap": "4.0.0-beta",
+    "PACE": "pace-js#^1.0.2"
   },
   "overrides": {
     "bootstrap": {
