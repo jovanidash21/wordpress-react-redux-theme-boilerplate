@@ -1,0 +1,11 @@
+// User variables
+@import "common/variables";
+
+// Core variables and mixins
+@import "../../bower_components/bootstrap/scss/functions";
+@import "../../bower_components/bootstrap/scss/variables";
+@import "../../bower_components/bootstrap/scss/mixins";
+
+// Common SCSS
+@import "common/mixins";
+@import "common/global";

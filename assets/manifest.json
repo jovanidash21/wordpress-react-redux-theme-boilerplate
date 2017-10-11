@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "vendor.css": {
+      "files": [
+        "styles/vendor.scss"
+      ]
+    },
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "vendor.js": {
+      "bower": [
+        "jquery"
+      ]
+    }
+  }
+}
