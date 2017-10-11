@@ -65,7 +65,8 @@ module.exports = {
   fonts: {
     globs: globs.fonts,
     src: assets + 'fonts',
-    dest: dist + 'fonts'
+    dest: dist + 'fonts',
+    bowerFonts: []
   },
   images: {
     settings: {
