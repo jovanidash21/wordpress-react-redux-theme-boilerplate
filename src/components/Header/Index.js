@@ -26,7 +26,7 @@ class Header extends Component {
     return (
       <div>
         <Navbar color="faded" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand href="/">WP React Redux</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
