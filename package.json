@@ -9,6 +9,14 @@
     "type": "git",
     "url": "https://github.com/jovanidash21/wordpress-react-redux-theme-boilerplate.git"
   },
+  "scripts": {
+    "build": "run-s gulp:prod webpack:prod",
+    "dev": "run-p gulp:dev webpack:dev",
+    "gulp:prod": "gulp --production",
+    "gulp:dev": "gulp watch",
+    "webpack:prod": "webpack -p",
+    "webpack:dev": "webpack --watch"
+  },
   "dependencies": {
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.1.1"
