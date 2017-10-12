@@ -1,7 +1,8 @@
 <?
 $libraries = [
   'lib/init.php',
-  'lib/assets.php'
+  'lib/assets.php',
+  'acf/acf-configuration.php'
 ];
 
 foreach ( $libraries as $lib ) {
