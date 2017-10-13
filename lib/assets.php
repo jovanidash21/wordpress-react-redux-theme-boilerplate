@@ -9,6 +9,11 @@ function assets() {
   wp_enqueue_script( 'vendor-js', get_stylesheet_directory_uri() . '/dist/scripts/vendor.min.js', array(), null, true);
   wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . '/dist/scripts/main.min.js', array(), null, true);
   wp_enqueue_script( 'react-redux-js', get_stylesheet_directory_uri() . '/dist/build/bundle.js', array(), null, true);
+  wp_localize_script( 'react-redux-js', 'WP_REACT_REDUX', array(
+    'siteName'        => get_bloginfo( 'name' ),
+    'siteDescription' => get_bloginfo( 'description' ),
+    'images'          => get_template_directory_uri() . '/dist/images',
+  ) );
 
 }
 add_action( 'wp_enqueue_scripts', 'assets' );
