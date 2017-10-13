@@ -6,7 +6,7 @@ class Work extends Component {
   render() {
     return (
       <div>
-        <Head title="Work" />
+        <Head title="`${WP_REACT_REDUX.siteName} | Work`" />
         <h1>Work</h1>
       </div>
     )

@@ -6,7 +6,7 @@ class Contact extends Component {
   render() {
     return (
       <div>
-        <Head title="Contact" />
+        <Head title="`${WP_REACT_REDUX.siteName} | Contact`" />
         <h1>Contact</h1>
       </div>
     )

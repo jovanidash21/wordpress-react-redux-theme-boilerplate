@@ -6,7 +6,7 @@ class About extends Component {
   render() {
     return (
       <div>
-        <Head title="About" />
+        <Head title="`${WP_REACT_REDUX.siteName} | About`" />
         <h1>About</h1>
       </div>
     )

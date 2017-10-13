@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Head title="Home" />
+        <Head title="`${WP_REACT_REDUX.siteName} | ${WP_REACT_REDUX.siteDescription}`" />
         <h1>Home</h1>
       </div>
     )
