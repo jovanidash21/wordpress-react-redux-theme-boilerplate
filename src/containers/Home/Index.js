@@ -4,9 +4,11 @@ import Head from '../../components/Head';
 
 class Home extends Component {
   render() {
+    const title = `${WP_REACT_REDUX.siteName} | ${WP_REACT_REDUX.siteDescription}`;
+
     return (
       <div>
-        <Head title="`${WP_REACT_REDUX.siteName} | ${WP_REACT_REDUX.siteDescription}`" />
+        <Head title={title} />
         <h1>Home</h1>
       </div>
     )

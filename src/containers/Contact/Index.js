@@ -4,9 +4,11 @@ import Head from '../../components/Head';
 
 class Contact extends Component {
   render() {
+    const title = `${WP_REACT_REDUX.siteName} | Contact`;
+
     return (
       <div>
-        <Head title="`${WP_REACT_REDUX.siteName} | Contact`" />
+        <Head title={title} />
         <h1>Contact</h1>
       </div>
     )
