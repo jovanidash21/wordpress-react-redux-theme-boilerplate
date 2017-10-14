@@ -1,6 +1,20 @@
 <?php
 function setup() {
 
+  // Register nav menus
+  // http://codex.wordpress.org/Function_Reference/register_nav_menus
+  $nav_menus = array(
+    'primary' => __( 'Primary' )
+  );
+  register_nav_menus( $nav_menus );
+
+  // Add post thumbnails
+  // http://codex.wordpress.org/Post_Thumbnails
+  // http://codex.wordpress.org/Function_Reference/add_image_size
+  add_theme_support( 'post-thumbnails' );
+  add_image_size( 'thumbnails-500x500', 500, 500, true );
+  add_image_size( 'thumbnails-1000x1000', 1000, 1000 );
+
 }
 add_action( 'after_setup_theme', 'setup' );
 
@@ -23,12 +37,14 @@ function cpt_register_work() {
     'not_found_in_trash' => __( 'Nothing found in Trash' ),
     'parent_item_colon'  => ''
   );
+
   $supports = array(
     'title', 
     'editor', 
     'thumbnail', 
     'excerpt'
   );
+  
   $rewrite = array(
     'slug' => $slug
   );
