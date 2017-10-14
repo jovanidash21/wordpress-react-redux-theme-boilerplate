@@ -1,4 +1,4 @@
-<?
+<?php
 $libraries = [
   'lib/init.php',
   'lib/assets.php',
