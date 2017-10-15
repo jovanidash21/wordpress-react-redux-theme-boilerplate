@@ -14,20 +14,18 @@ class Header extends Component {
     super(props);
 
     this.state = {isOpen: false};
-    this.toggle = this.toggle.bind(this);
   }
   toggle() {
     this.setState({isOpen: !this.state.isOpen});
   }
   render() {
     const { isOpen } = this.state;
-    const { toggle } = this.props;
 
     return (
       <div>
         <Navbar color="faded" light expand="md">
           <NavbarBrand href="/">WP React Redux</NavbarBrand>
-          <NavbarToggler onClick={toggle} />
+          <NavbarToggler onClick={::this.toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
