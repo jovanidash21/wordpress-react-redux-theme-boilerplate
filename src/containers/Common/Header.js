@@ -25,7 +25,7 @@ class Header extends Component {
     this.setState({isOpen: !this.state.isOpen});
   }
   render() {
-    const { menuData } = this.props.menu;
+    const { menu } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -35,9 +35,9 @@ class Header extends Component {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             {
-              menuData != null
+              menu.data != null
                 ?
-                menuData.map((menu, i) =>
+                menu.data.map((menu, i) =>
                   <MenuItem
                     key={i}
                     menu={menu} 
