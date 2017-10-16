@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Head from '../../components/Head';
-import Header from '../Common/Header';
 
 class Home extends Component {
   render() {
@@ -10,7 +9,6 @@ class Home extends Component {
     return (
       <div>
         <Head title={title} />
-        <Header />
         <h1>Home</h1>
       </div>
     )

@@ -1,3 +1,6 @@
+// Header
+export { default as Header } from './Common/Header';
+
 // Home
 export { default as Home } from './Home';
 
