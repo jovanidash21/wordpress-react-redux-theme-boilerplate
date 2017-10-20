@@ -4,7 +4,8 @@ function setup() {
   // Register nav menus
   // https://codex.wordpress.org/Function_Reference/register_nav_menus
   $nav_menus = array(
-    'primary' => __( 'Primary' )
+    'primary' => __( 'Primary' ),
+    'footer' => __( 'Footer' )
   );
   register_nav_menus( $nav_menus );
 
