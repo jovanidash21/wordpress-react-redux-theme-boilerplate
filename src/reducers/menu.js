@@ -3,7 +3,7 @@ import { FETCH_MENU } from '../constants/menu';
 const initialState = {
   isLoading: false,
   isError: false,
-  data: null
+  data: {}
 };
 
 const menu = (state=initialState, action) => {

@@ -6,7 +6,7 @@ import {
 const initialState = {
   isLoading: false,
   isError: false,
-  data: null
+  data: {}
 };
 
 const post = (state=initialState, action) => {
