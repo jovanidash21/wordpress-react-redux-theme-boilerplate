@@ -35,7 +35,7 @@ class Header extends Component {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             {
-              menu.data != null
+              menu.data.length
                 ?
                 menu.data.map((menu, i) =>
                   <MenuItem
