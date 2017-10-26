@@ -4,14 +4,17 @@ import {
   NavItem, 
   NavLink 
 } from 'reactstrap';
+import { NavLink as RRNavLink } from 'react-router-dom';
 
 class MenuItem extends Component {
   render() {
     const { menu } = this.props;
+    menu.url = menu.url.replace(/^(?:\/\/|[^\/]+)*\//, "/");
+    menu.url = menu.url.slice(0, -1);
 
     return (
       <NavItem>
-        <NavLink href={menu.url}>
+        <NavLink to={menu.url} tag={RRNavLink}>
           {menu.title}
         </NavLink>
       </NavItem>
