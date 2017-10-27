@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import Header from './Common/Header';
 
-class Base extends Component {
+class Layout extends Component {
   constructor(props) {
     super(props);
   }
@@ -26,8 +26,8 @@ class Base extends Component {
   }
 }
 
-Base.propTypes={
+Layout.propTypes={
   component: PropTypes.func
 }
 
-export default Base;
+export default Layout;
