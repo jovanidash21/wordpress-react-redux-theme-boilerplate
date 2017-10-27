@@ -4,18 +4,30 @@ import { Route } from 'react-router';
 import Header from './Common/Header';
 
 class Base extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+  }
+  handleComponent(matchProps) {
+    const { component: Components } = this.props;
+
     return (
       <div>
         <Header />
-        {this.props.children}
+        <Components {...matchProps} />
       </div>
+    )
+  }
+  render() {
+    const { component, ...rest } = this.props;
+
+    return (
+      <Route {...rest} render={::this.handleComponent} />
     )
   }
 }
 
 Base.propTypes={
-  children: PropTypes.node
+  component: PropTypes.func
 }
 
 export default Base;
