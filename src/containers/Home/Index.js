@@ -9,7 +9,9 @@ class Home extends Component {
     return (
       <div>
         <Head title={title} />
-        <h1>Home</h1>
+        <div className="container">
+          <h2>Home</h2>
+        </div>
       </div>
     )
   }

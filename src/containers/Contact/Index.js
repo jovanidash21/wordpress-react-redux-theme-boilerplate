@@ -9,7 +9,9 @@ class Contact extends Component {
     return (
       <div>
         <Head title={title} />
-        <h1>Contact</h1>
+        <div className="container">
+          <h2>Contact</h2>
+        </div>
       </div>
     )
   }
