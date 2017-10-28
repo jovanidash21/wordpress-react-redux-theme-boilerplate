@@ -29,24 +29,26 @@ class Header extends Component {
     const { isOpen } = this.state;
 
     return (
-      <Navbar color="faded" light expand="md">
-        <NavbarBrand href="/">WP React Redux</NavbarBrand>
-        <NavbarToggler onClick={::this.toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            {
-              menu.data.length
-                ?
-                menu.data.map((menu, i) =>
-                  <MenuItem
-                    key={i}
-                    menu={menu} 
-                  />
-                )
-                : ''
-            }
-          </Nav>
-        </Collapse>
+      <Navbar color="dark" dark expand="md">
+        <div className="container">
+          <NavbarBrand href="/">WP React Redux</NavbarBrand>
+          <NavbarToggler onClick={::this.toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              {
+                menu.data.length
+                  ?
+                  menu.data.map((menu, i) =>
+                    <MenuItem
+                      key={i}
+                      menu={menu} 
+                    />
+                  )
+                  : ''
+              }
+            </Nav>
+          </Collapse>
+        </div>
       </Navbar>
     )
   }
