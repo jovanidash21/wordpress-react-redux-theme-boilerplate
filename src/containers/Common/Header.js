@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { 
   Collapse, 
   Navbar, 
@@ -31,7 +32,9 @@ class Header extends Component {
     return (
       <Navbar color="dark" dark expand="md">
         <div className="container">
-          <NavbarBrand href="/">WP React Redux</NavbarBrand>
+          <NavbarBrand to="/" tag={Link}>
+            {WP_REACT_REDUX.siteName}
+          </NavbarBrand>
           <NavbarToggler onClick={::this.toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
