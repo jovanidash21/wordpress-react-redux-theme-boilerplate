@@ -10,7 +10,10 @@ class MenuItem extends Component {
   render() {
     const { menu } = this.props;
     menu.url = menu.url.replace(/^(?:\/\/|[^\/]+)*\//, "/");
-    menu.url = menu.url.slice(0, -1);
+    
+    if ( menu.url.length > 1 ) {
+      menu.url = menu.url.replace(/\/$/, "");
+    }
 
     return (
       <NavItem>
