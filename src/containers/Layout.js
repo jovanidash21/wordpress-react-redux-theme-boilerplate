@@ -8,12 +8,12 @@ class Layout extends Component {
     super(props);
   }
   handleComponent(matchProps) {
-    const { component: Components } = this.props;
+    const { component: Content } = this.props;
 
     return (
       <div>
         <Header />
-        <Components {...matchProps} />
+        <Content {...matchProps} />
       </div>
     )
   }
