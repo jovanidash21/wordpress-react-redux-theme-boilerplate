@@ -74,7 +74,6 @@
     "reactstrap": "^5.0.0-alpha.3",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-persist": "^4.10.1",
     "redux-persist-transform-filter": "0.0.16",
     "redux-promise-middleware": "^4.4.1",
     "redux-thunk": "^2.2.0",
