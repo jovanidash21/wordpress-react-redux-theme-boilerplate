@@ -25,7 +25,7 @@ add_action( 'after_setup_theme', 'setup' );
 
 function cpt_register_blog() {
   $post_type = 'cpt-blog';
-  $rest_base = 'blog-api';
+  $rest_base = 'blog';
   $slug      = 'blog';
   $menu_icon = 'dashicons-megaphone';
 
@@ -77,7 +77,7 @@ function cpt_register_blog() {
 
 function cpt_register_work() {
   $post_type = 'cpt-work';
-  $rest_base = 'work-api';
+  $rest_base = 'work';
   $slug      = 'work';
   $menu_icon = 'dashicons-hammer';
 
