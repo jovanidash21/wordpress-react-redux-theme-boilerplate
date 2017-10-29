@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Jumbotron } from 'reactstrap';
-import ReactHtmlParser, { 
-  processNodes, 
-  convertNodeToElement, 
-  htmlparser2 
-} from 'react-html-parser';
+import ReactHtmlParser from 'react-html-parser';
 import { fetchPage } from '../../actions/page';
 import Head from '../../components/Head';
 
