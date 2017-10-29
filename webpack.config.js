@@ -24,13 +24,20 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader!sass-resources-loader',
-        options: {
-          resources: [
-            path.join(__dirname, '/assets/styles/common/_mixins.scss'),
-            path.join(__dirname, '/assets/styles/common/_variables.scss')
-          ]
-        }
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                path.join(__dirname, '/assets/styles/common/_variables.scss'),
+                path.join(__dirname, '/assets/styles/common/_mixins.scss')
+              ]
+            }
+          }
+        ]
       }
     ]
   },
