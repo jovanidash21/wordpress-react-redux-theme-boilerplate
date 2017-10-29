@@ -22,11 +22,30 @@ class Header extends Component {
   componentWillMount() {
     this.props.dispatch(fetchMenu('primary'));
   }
-  toggle() {
+  handleNavBarToggle() {
     this.setState({isOpen: !this.state.isOpen});
   }
-  render() {
+  handleMenuItems() {
     const { menu } = this.props;
+
+    return (
+      menu.data.length
+        ?
+        menu.data.map((data, i) =>
+          data.menuLocation === 'primary'
+            ?
+            data.menuStructure.map((menuStructure, i) =>
+              <MenuItem
+                key={i}
+                menu={menuStructure}
+              />
+            )
+            : ''
+        )
+        : ''
+    )
+  }
+  render() {
     const { isOpen } = this.state;
 
     return (
@@ -35,25 +54,10 @@ class Header extends Component {
           <NavbarBrand to="/" tag={Link}>
             {WP_REACT_REDUX.siteName}
           </NavbarBrand>
-          <NavbarToggler onClick={::this.toggle} />
+          <NavbarToggler onClick={::this.handleNavBarToggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              {
-                menu.data.length
-                  ?
-                  menu.data.map((data, i) =>
-                    data.menuLocation === 'primary'
-                      ?
-                      data.menuStructure.map((menuStructure, i) =>
-                        <MenuItem
-                          key={i}
-                          menu={menuStructure} 
-                        />
-                      )
-                      : ''
-                  )
-                  : ''
-              }
+              {::this.handleMenuItems()}
             </Nav>
           </Collapse>
         </div>
