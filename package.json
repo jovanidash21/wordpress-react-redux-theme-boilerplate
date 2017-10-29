@@ -66,6 +66,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.2.0",
+    "react-html-parser": "^2.0.1",
     "react-redux": "^5.0.6",
     "react-redux-loading-bar": "^2.9.3",
     "react-router": "^4.2.0",
