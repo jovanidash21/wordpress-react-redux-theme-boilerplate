@@ -41,11 +41,16 @@ class Header extends Component {
               {
                 menu.data.length
                   ?
-                  menu.data.map((menu, i) =>
-                    <MenuItem
-                      key={i}
-                      menu={menu} 
-                    />
+                  menu.data.map((data, i) =>
+                    data.menuLocation === 'primary'
+                      ?
+                      data.menuStructure.map((menuStructure, i) =>
+                        <MenuItem
+                          key={i}
+                          menu={menuStructure} 
+                        />
+                      )
+                      : ''
                   )
                   : ''
               }

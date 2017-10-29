@@ -3,7 +3,7 @@ import { FETCH_MENU } from '../constants/menu';
 const initialState = {
   isLoading: false,
   isError: false,
-  data: {}
+  data: []
 };
 
 const menu = (state=initialState, action) => {
@@ -17,7 +17,13 @@ const menu = (state=initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        data: action.payload.data
+        data: [
+          ...state.data,
+          {
+            menuLocation: action.meta,
+            menuStructure: action.payload.data
+          }
+        ]
       };
     case `${FETCH_MENU}_ERROR`:
       return {
