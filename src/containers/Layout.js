@@ -13,7 +13,9 @@ class Layout extends Component {
     return (
       <div>
         <Header />
-        <Content {...matchProps} />
+        <div className="main-content">
+          <Content {...matchProps} />
+        </div>
       </div>
     )
   }
