@@ -4,11 +4,11 @@ import {
   FETCH_POST
 } from '../constants/post';
 
-export function fetchPosts(restBase) {
+export function fetchPosts(slug) {
   return dispatch => {
     return dispatch({
       type: FETCH_POSTS,
-      payload: axios.get(`/wp-json/wp/v2/${restBase}`)
+      payload: axios.get(`/wp-json/wp/v2/${slug}`)
     })
     .catch((error) => {
       if (error instanceof Error) {
