@@ -7,6 +7,18 @@ import {
 import { NavLink as RRNavLink } from 'react-router-dom';
 
 class MenuItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+  handleLink(url) {
+    url = url.replace(/^(?:\/\/|[^\/]+)*\//, "/");
+
+    url.length > 1 
+      ? url = url.replace(/\/$/, "")
+      : ''
+
+    return url;
+  }
   render() {
     const { menu } = this.props;
     menu.url = menu.url.replace(/^(?:\/\/|[^\/]+)*\//, "/");
@@ -17,7 +29,7 @@ class MenuItem extends Component {
 
     return (
       <NavItem>
-        <NavLink to={menu.url} tag={RRNavLink}>
+        <NavLink to={::this.handleLink(menu.url)} tag={RRNavLink}>
           {menu.title}
         </NavLink>
       </NavItem>
