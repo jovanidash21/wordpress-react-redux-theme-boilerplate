@@ -12,13 +12,25 @@ class BlogSingle extends Component {
   componentWillMount() {
     this.props.dispatch(fetchPost('blog', this.props.match.params.slug));
   }
+  handleHeadData(headTitle) {
+    let title = '';
+
+    if ( headTitle !== undefined ) {
+      title = `${headTitle} | Blog | ${WP_REACT_REDUX.siteName}`;
+    } else {
+      title = `Blog | ${WP_REACT_REDUX.siteName}`;
+    }        
+
+    return (
+      <Head title={title} />
+    )
+  }
   render() {
     const { post } = this.props;
     const title = `${WP_REACT_REDUX.siteName} | Blog`;
 
     return (
       <div>
-        <Head title={title} />
         <div className="container">
           <Jumbotron>
             {
@@ -30,6 +42,7 @@ class BlogSingle extends Component {
                     <hr className="my-2" />
                     <h2 className="display-3">
                       {data.title.rendered}
+                      {::this.handleHeadData(data.title.rendered)}
                     </h2>
                     <hr className="my-2" />
                     {ReactHtmlParser(data.content.rendered)}

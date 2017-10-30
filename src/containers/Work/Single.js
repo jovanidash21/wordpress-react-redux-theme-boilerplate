@@ -12,13 +12,19 @@ class WorkSingle extends Component {
   componentWillMount() {
     this.props.dispatch(fetchPost('work', this.props.match.params.slug));
   }
+  handleHeadData(headTitle) {
+    const title = `${headTitle} | Work | ${WP_REACT_REDUX.siteName}`;      
+
+    return (
+      <Head title={title} />
+    )
+  }
   render() {
     const { post } = this.props;
     const title = `${WP_REACT_REDUX.siteName} | Work`;
 
     return (
       <div>
-        <Head title={title} />
         <div className="container">
           <Jumbotron>
             {
@@ -30,6 +36,7 @@ class WorkSingle extends Component {
                     <hr className="my-2" />
                     <h2 className="display-3">
                       {data.title.rendered}
+                      {::this.handleHeadData(data.title.rendered)}
                     </h2>
                     <hr className="my-2" />
                     {ReactHtmlParser(data.content.rendered)}
