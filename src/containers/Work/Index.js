@@ -15,16 +15,22 @@ class Work extends Component {
     this.props.dispatch(fetchPage('work'));
     this.props.dispatch(fetchPosts('work'));
   }
+  handleHeadData(headTitle) {
+    const title = `${headTitle} | ${WP_REACT_REDUX.siteName}`;
+
+    return (
+      <Head title={title} />
+    )
+  }
   render() {
     const {
       page,
       post
     } = this.props;
-    const title = `${WP_REACT_REDUX.siteName} | Work`;
 
     return (
       <div>
-        <Head title={title} />
+        {::this.handleHeadData('Work')}
         <div className="container">
           <Jumbotron>
             {

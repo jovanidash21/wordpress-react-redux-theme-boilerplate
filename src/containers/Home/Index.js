@@ -12,13 +12,19 @@ class Home extends Component {
   componentWillMount() {
     this.props.dispatch(fetchPage('home'));
   }
-  render() {
-    const { page } = this.props;
+  handleHeadData() {
     const title = `${WP_REACT_REDUX.siteName} | ${WP_REACT_REDUX.siteDescription}`;
 
     return (
+      <Head title={title} />
+    )
+  }
+  render() {
+    const { page } = this.props;
+
+    return (
       <div>
-        <Head title={title} />
+        {::this.handleHeadData()}
         <div className="container">
           <Jumbotron>
             {

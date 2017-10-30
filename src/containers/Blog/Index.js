@@ -15,16 +15,22 @@ class Blog extends Component {
     this.props.dispatch(fetchPage('blog'));
     this.props.dispatch(fetchPosts('blog'));
   }
+  handleHeadData(headTitle) {
+    const title = `${headTitle} | ${WP_REACT_REDUX.siteName}`;
+
+    return (
+      <Head title={title} />
+    )
+  }
   render() {
     const { 
       page,
       post
     } = this.props;
-    const title = `${WP_REACT_REDUX.siteName} | Blog`;
 
     return (
       <div>
-        <Head title={title} />
+        {::this.handleHeadData('Blog')}
         <div className="container">
           <Jumbotron>
             {

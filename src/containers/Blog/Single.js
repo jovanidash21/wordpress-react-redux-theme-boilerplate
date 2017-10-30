@@ -13,13 +13,7 @@ class BlogSingle extends Component {
     this.props.dispatch(fetchPost('blog', this.props.match.params.slug));
   }
   handleHeadData(headTitle) {
-    let title = '';
-
-    if ( headTitle !== undefined ) {
-      title = `${headTitle} | Blog | ${WP_REACT_REDUX.siteName}`;
-    } else {
-      title = `Blog | ${WP_REACT_REDUX.siteName}`;
-    }        
+    const title = `${headTitle} | Blog | ${WP_REACT_REDUX.siteName}`;      
 
     return (
       <Head title={title} />

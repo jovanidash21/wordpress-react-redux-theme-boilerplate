@@ -12,13 +12,19 @@ class Contact extends Component {
   componentWillMount() {
     this.props.dispatch(fetchPage('contact'));
   }
+  handleHeadData(headTitle) {
+    const title = `${headTitle} | ${WP_REACT_REDUX.siteName}`;
+
+    return (
+      <Head title={title} />
+    )
+  }
   render() {
     const { page } = this.props;
-    const title = `${WP_REACT_REDUX.siteName} | Contact`;
 
     return (
       <div>
-        <Head title={title} />
+        {::this.handleHeadData('Contact')}
         <div className="container">
           <Jumbotron>
             {
