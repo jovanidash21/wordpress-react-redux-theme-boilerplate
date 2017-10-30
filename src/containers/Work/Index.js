@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import { Jumbotron } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
 import { fetchPage } from '../../actions/page';
+import { fetchPosts } from '../../actions/post';
 import Head from '../../components/Head';
+import WorkList from '../../components/Work/WorkList';
 
 class Work extends Component {
   constructor(props) {
@@ -11,9 +13,13 @@ class Work extends Component {
   }
   componentWillMount() {
     this.props.dispatch(fetchPage('work'));
+    this.props.dispatch(fetchPosts('work'));
   }
   render() {
-    const { page } = this.props;
+    const {
+      page,
+      post
+    } = this.props;
     const title = `${WP_REACT_REDUX.siteName} | Work`;
 
     return (
@@ -35,6 +41,16 @@ class Work extends Component {
                 )
                 : ''
             }
+            {
+              post.data.length
+                ?
+                <div>
+                  <hr className="my-2" />
+                  <h3>Work List</h3>
+                  <WorkList post={post} />
+                </div>
+                : ''
+            }
           </Jumbotron>
         </div>
       </div>
@@ -44,7 +60,8 @@ class Work extends Component {
 
 const mapStateToProps = (state) => {  
   return {
-    page: state.page
+    page: state.page,
+    post: state.post
   }
 }
 
