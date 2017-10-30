@@ -6,7 +6,7 @@ import {
 const initialState = {
   isLoading: false,
   isError: false,
-  data: {}
+  data: []
 };
 
 const page = (state=initialState, action) => {
