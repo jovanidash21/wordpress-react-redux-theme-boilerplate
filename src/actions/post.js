@@ -4,11 +4,11 @@ import {
   FETCH_POST
 } from '../constants/post';
 
-export function fetchPosts(slug) {
+export function fetchPosts(postType) {
   return dispatch => {
     return dispatch({
       type: FETCH_POSTS,
-      payload: axios.get(`/wp-json/wp/v2/${slug}`)
+      payload: axios.get(`/wp-json/wp/v2/${postType}`)
     })
     .catch((error) => {
       if (error instanceof Error) {
@@ -18,11 +18,11 @@ export function fetchPosts(slug) {
   }
 }
 
-export function fetchPost(restBase, slug) {
+export function fetchPost(postType, slug) {
   return dispatch => {
     return dispatch({
       type: FETCH_POST,
-      payload: axios.get(`/wp-json/wp/v2/${restBase}/?slug=${slug}`)
+      payload: axios.get(`/wp-json/wp/v2/${postType}/?slug=${slug}`)
     })
     .catch((error) => {
       if (error instanceof Error) {
