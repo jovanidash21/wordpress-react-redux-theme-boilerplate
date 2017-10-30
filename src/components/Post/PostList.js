@@ -6,7 +6,19 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-class WorkList extends Component {
+class PostList extends Component {
+  constructor(props) {
+    super(props);
+  }
+  handleLink(url) {
+    url = url.replace(/^(?:\/\/|[^\/]+)*\//, "/");
+
+    url.length > 1 
+      ? url = url.replace(/\/$/, "")
+      : ''
+
+    return url;
+  }
   render() {
     const { post } = this.props;
 
@@ -14,8 +26,8 @@ class WorkList extends Component {
       <ListGroup>
         {
           post.data.map((data, i) =>
-            <ListGroupItem key={i}>
-              {data.title.rendered}
+            <ListGroupItem key={i} to={::this.handleLink(data.link)} tag={Link}>
+                {data.title.rendered}
             </ListGroupItem>
           )
         }
@@ -25,8 +37,8 @@ class WorkList extends Component {
   }
 }
 
-WorkList.propTypes={
+PostList.propTypes={
   post: PropTypes.object.isRequired
 }
 
-export default WorkList;
+export default PostList;

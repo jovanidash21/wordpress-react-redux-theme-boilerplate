@@ -5,7 +5,7 @@ import ReactHtmlParser from 'react-html-parser';
 import { fetchPage } from '../../actions/page';
 import { fetchPosts } from '../../actions/post';
 import Head from '../../components/Head';
-import WorkList from '../../components/Work/WorkList';
+import PostList from '../../components/Post/PostList';
 
 class Work extends Component {
   constructor(props) {
@@ -47,7 +47,7 @@ class Work extends Component {
                 <div>
                   <hr className="my-2" />
                   <h3>Work List</h3>
-                  <WorkList post={post} />
+                  <PostList post={post} />
                 </div>
                 : ''
             }
