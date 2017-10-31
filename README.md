@@ -64,3 +64,6 @@ npm run dev
 * ```npm run gulp:dev``` - run the gulp in dev mode.
 * ```npm run webpack:prod``` - run the webpack in production mode.
 * ```npm run webpack:dev``` - run the webpack in dev mode.
+
+## License
+Licensed under [MIT](https://opensource.org/licenses/mit-license.php).
