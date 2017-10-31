@@ -1,6 +1,9 @@
 <?php
 function assets() {
 
+  // Fonts
+  wp_enqueue_style( 'roboto-font', 'https://fonts.googleapis.com/css?family=Roboto' );
+
   // Styles
   wp_enqueue_style( 'vendor-css', get_stylesheet_directory_uri() . '/dist/styles/vendor.min.css', false, null);
   wp_enqueue_style( 'main-css', get_template_directory_uri() . '/dist/styles/main.min.css', false, null);
