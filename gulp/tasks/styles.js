@@ -27,7 +27,7 @@ var cssTasks = function(filename) {
           'opera 12'
         ]
       })
-      .pipe(plugins.cssnano, ({discardComments: {removeAll: true}}))
+      .pipe(plugins.cssnano, ({discardComments: {removeAll: true}, zindex: false}))
       .pipe(plugins.rename, ({
         suffix: ".min",
         extname: ".css"
