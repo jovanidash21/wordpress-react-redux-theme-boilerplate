@@ -1,0 +1,20 @@
+footer {
+  padding: 25px 0;
+  text-align: center;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline;
+    padding: 11px;
+  }
+  a {
+    color: #fff;
+    &:hover,
+    &:focus {
+      color: #ccc;
+      text-decoration: none;
+    }
+  }
+}

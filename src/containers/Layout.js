@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import Header from './Common/Header';
+import Footer from './Common/Footer';
 
 class Layout extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Layout extends Component {
         <div className="main-content">
           <Content {...matchProps} />
         </div>
+        <Footer />
       </div>
     )
   }
