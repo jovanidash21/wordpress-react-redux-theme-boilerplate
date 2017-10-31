@@ -25,6 +25,12 @@
       "main": [
         "dist/js/bootstrap.js"
       ]
+    },
+    "PACE": {
+      "main": [
+        "themes/blue/pace-theme-minimal.css",
+        "pace.js"
+      ]
     }
   }
 }

@@ -19,3 +19,9 @@ body {
 .main-content {
   padding: 21px 0;
 }
+.pace {
+  .pace-progress {
+    height: 3px;
+    z-index: 100000;
+  }
+}

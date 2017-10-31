@@ -9,6 +9,9 @@
     "vendor.css": {
       "files": [
         "styles/vendor.scss"
+      ],
+      "bower": [
+        "PACE"
       ]
     },
     "main.js": {
@@ -19,7 +22,8 @@
     },
     "vendor.js": {
       "bower": [
-        "jquery"
+        "jquery",
+        "PACE"
       ]
     }
   }
