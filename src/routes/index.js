@@ -8,6 +8,7 @@ import Blog from '../containers/Blog';
 import BlogSingle from '../containers/Blog/Single';
 import About from '../containers/About';
 import Contact from '../containers/Contact';
+import NotFound from '../containers/NotFound';
 
 const routes = (
   <div>
@@ -19,6 +20,7 @@ const routes = (
       <Layout exact path="/blog/:slug" component={BlogSingle} />
       <Layout exact path="/about" component={About} />
       <Layout exact path="/contact" component={Contact} />
+      <Layout path="*" component={NotFound} />
     </Switch>
   </div>
 );
