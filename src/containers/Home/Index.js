@@ -4,6 +4,8 @@ import { Jumbotron } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
 import { fetchPage } from '../../actions/page';
 import Head from '../../components/Head';
+import { fetchPages } from '../../actions/page';
+import { fetchPosts, fetchPost } from '../../actions/post';
 
 class Home extends Component {
   constructor(props) {
@@ -28,18 +30,16 @@ class Home extends Component {
         <div className="container">
           <Jumbotron>
             {
-              page.data.length
-                ?
-                page.data.map((data, i) =>
-                  <div key={i}>
-                    <h2 className="display-3">
-                      {data.title.rendered}
-                    </h2>
-                    <hr className="my-2" />
-                    {ReactHtmlParser(data.content.rendered)}
-                  </div>
-                )
-                : ''
+              page.data.length &&
+              page.data.map((data, i) =>
+                <div key={i}>
+                  <h2 className="display-3">
+                    {data.title.rendered}
+                  </h2>
+                  <hr className="my-2" />
+                  {ReactHtmlParser(data.content.rendered)}
+                </div>
+              )
             }
           </Jumbotron>
         </div>

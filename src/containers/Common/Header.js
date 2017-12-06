@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { 
-  Collapse, 
-  Navbar, 
-  NavbarToggler, 
-  NavbarBrand, 
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
   Nav
 } from 'reactstrap';
 import { fetchMenu } from '../../actions/menu';
@@ -29,20 +29,16 @@ class Header extends Component {
     const { menu } = this.props;
 
     return (
-      menu.data.length
-        ?
-        menu.data.map((data, i) =>
-          data.menuLocation === 'primary'
-            ?
-            data.menuStructure.map((menuStructure, i) =>
-              <MenuItem
-                key={i}
-                menu={menuStructure}
-              />
-            )
-            : ''
+      menu.data.length &&
+      menu.data.map((data, i) =>
+        (data.menuLocation === 'primary') &&
+        data.menuStructure.map((menuStructure, i) =>
+          <MenuItem
+            key={i}
+            menu={menuStructure}
+          />
         )
-        : ''
+      )
     )
   }
   render() {
@@ -66,7 +62,7 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = (state) => {  
+const mapStateToProps = (state) => {
   return {
     menu: state.menu
   }

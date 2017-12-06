@@ -23,7 +23,7 @@ class Blog extends Component {
     )
   }
   render() {
-    const { 
+    const {
       page,
       post
     } = this.props;
@@ -34,18 +34,16 @@ class Blog extends Component {
         <div className="container">
           <Jumbotron>
             {
-              page.data.length
-                ?
-                page.data.map((data, i) =>
-                  <div key={i}>
-                    <h2 className="display-3">
-                      {data.title.rendered}
-                    </h2>
-                    <hr className="my-2" />
-                    {ReactHtmlParser(data.content.rendered)}
-                  </div>
-                )
-                : ''
+              page.data.length &&
+              page.data.map((data, i) =>
+                <div key={i}>
+                  <h2 className="display-3">
+                    {data.title.rendered}
+                  </h2>
+                  <hr className="my-2" />
+                  {ReactHtmlParser(data.content.rendered)}
+                </div>
+              )
             }
             {
               post.data.length
@@ -64,7 +62,7 @@ class Blog extends Component {
   }
 }
 
-const mapStateToProps = (state) => {  
+const mapStateToProps = (state) => {
   return {
     page: state.page,
     post: state.post
