@@ -13,9 +13,8 @@ class PostList extends Component {
   handleLink(url) {
     url = url.replace(/^(?:\/\/|[^\/]+)*\//, "/");
 
-    url.length > 1 
-      ? url = url.replace(/\/$/, "")
-      : ''
+    (url.length > 1) &&
+    url = url.replace(/\/$/, "")
 
     return url;
   }
@@ -27,12 +26,11 @@ class PostList extends Component {
         {
           post.data.map((data, i) =>
             <ListGroupItem key={i} to={::this.handleLink(data.link)} tag={Link}>
-                {data.title.rendered}
+              {data.title.rendered}
             </ListGroupItem>
           )
         }
       </ListGroup>
-
     )
   }
 }
