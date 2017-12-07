@@ -46,14 +46,12 @@ class Blog extends Component {
               )
             }
             {
-              post.data.length
-                ?
-                <div>
-                  <hr className="my-2" />
-                  <h3>Blog List</h3>
-                  <PostList post={post} />
-                </div>
-                : ''
+              post.data.length &&
+              <div>
+                <hr className="my-2" />
+                <h3>Blog List</h3>
+                <PostList post={post} />
+              </div>
             }
           </Jumbotron>
         </div>

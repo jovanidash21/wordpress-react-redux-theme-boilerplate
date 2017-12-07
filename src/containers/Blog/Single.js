@@ -13,7 +13,7 @@ class BlogSingle extends Component {
     this.props.dispatch(fetchPost('blog', this.props.match.params.slug));
   }
   handleHeadData(headTitle) {
-    const title = `${headTitle} | Blog | ${WP_REACT_REDUX.siteName}`;      
+    const title = `${headTitle} | Blog | ${WP_REACT_REDUX.siteName}`;
 
     return (
       <Head title={title} />
@@ -28,21 +28,19 @@ class BlogSingle extends Component {
         <div className="container">
           <Jumbotron>
             {
-              post.data.length
-                ?
-                post.data.map((data, i) =>
-                  <div key={i}>
-                    <h3>Blog</h3>
-                    <hr className="my-2" />
-                    <h2 className="display-3">
-                      {data.title.rendered}
-                      {::this.handleHeadData(data.title.rendered)}
-                    </h2>
-                    <hr className="my-2" />
-                    {ReactHtmlParser(data.content.rendered)}
-                  </div>
-                )
-                : ''
+              post.data.length &&
+              post.data.map((data, i) =>
+                <div key={i}>
+                  <h3>Blog</h3>
+                  <hr className="my-2" />
+                  <h2 className="display-3">
+                    {data.title.rendered}
+                    {::this.handleHeadData(data.title.rendered)}
+                  </h2>
+                  <hr className="my-2" />
+                  {ReactHtmlParser(data.content.rendered)}
+                </div>
+              )
             }
           </Jumbotron>
         </div>
@@ -51,7 +49,7 @@ class BlogSingle extends Component {
   }
 }
 
-const mapStateToProps = (state) => {  
+const mapStateToProps = (state) => {
   return {
     post: state.post
   }
