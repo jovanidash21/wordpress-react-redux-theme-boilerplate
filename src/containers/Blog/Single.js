@@ -28,7 +28,7 @@ class BlogSingle extends Component {
         <div className="container">
           <Jumbotron>
             {
-              post.data.length &&
+              post.data &&
               post.data.map((data, i) =>
                 <div key={i}>
                   <h3>Blog</h3>

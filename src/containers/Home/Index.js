@@ -30,7 +30,7 @@ class Home extends Component {
         <div className="container">
           <Jumbotron>
             {
-              page.data.length &&
+              page.data &&
               page.data.map((data, i) =>
                 <div key={i}>
                   <h2 className="display-3">

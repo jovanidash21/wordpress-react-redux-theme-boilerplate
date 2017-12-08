@@ -34,7 +34,7 @@ class Work extends Component {
         <div className="container">
           <Jumbotron>
             {
-              page.data.length &&
+              page.data &&
               page.data.map((data, i) =>
                 <div key={i}>
                   <h2 className="display-3">
@@ -46,7 +46,7 @@ class Work extends Component {
               )
             }
             {
-              post.data.length &&
+              post.data &&
               <div>
                 <hr className="my-2" />
                 <h3>Work List</h3>

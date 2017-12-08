@@ -22,7 +22,7 @@ class Footer extends Component {
             <div className="col-12">
               <ul>
                 {
-                  menu.data.length &&
+                  menu.data &&
                   menu.data.map((data, i) =>
                     (data.menuLocation === 'footer') &&
                     data.menuStructure.map((menuStructure, i) =>

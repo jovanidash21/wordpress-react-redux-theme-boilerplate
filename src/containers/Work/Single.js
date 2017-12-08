@@ -28,7 +28,7 @@ class WorkSingle extends Component {
         <div className="container">
           <Jumbotron>
             {
-              post.data.length &&
+              post.data &&
               post.data.map((data, i) =>
                 <div key={i}>
                   <h3>Work</h3>
