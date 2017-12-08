@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { 
-  NavItem, 
-  NavLink 
+import {
+  NavItem,
+  NavLink
 } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
 
@@ -13,11 +13,10 @@ class MenuItem extends Component {
   handleLink(url) {
     url = url.replace(/^(?:\/\/|[^\/]+)*\//, "/");
 
-    url.length > 1 
-      ? url = url.replace(/\/$/, "")
-      : ''
-
-    return url;
+    return (
+      url.length > 1 &&
+      url.replace(/\/$/, "")
+    )
   }
   render() {
     const { menu } = this.props;
