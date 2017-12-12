@@ -31,7 +31,7 @@ class Layout extends Component {
 }
 
 Layout.propTypes={
-  component: PropTypes.func
+  component: PropTypes.func.isRequired
 }
 
 export default Layout;
