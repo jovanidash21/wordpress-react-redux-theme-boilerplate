@@ -9,10 +9,11 @@ class MenuItem extends Component {
   handleLink(url) {
     url = url.replace(/^(?:\/\/|[^\/]+)*\//, "/");
 
-    return (
-      url.length > 1 &&
-      url.replace(/\/$/, "")
-    )
+    url.length > 1
+      ? url = url.replace(/\/$/, "")
+      : ''
+
+    return url;
   }
   render() {
     const { menu } = this.props;

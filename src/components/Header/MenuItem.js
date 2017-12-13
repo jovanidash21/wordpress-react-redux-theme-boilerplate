@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import {
   NavItem,
   NavLink
 } from 'reactstrap';
-import { NavLink as RRNavLink } from 'react-router-dom';
 
 class MenuItem extends Component {
   constructor(props) {
@@ -13,17 +13,18 @@ class MenuItem extends Component {
   handleLink(url) {
     url = url.replace(/^(?:\/\/|[^\/]+)*\//, "/");
 
-    return (
-      url.length > 1 &&
-      url.replace(/\/$/, "")
-    )
+    url.length > 1
+      ? url = url.replace(/\/$/, "")
+      : ''
+
+    return url;
   }
   render() {
     const { menu } = this.props;
 
     return (
       <NavItem>
-        <NavLink to={::this.handleLink(menu.url)} tag={RRNavLink}>
+        <NavLink tag={RRNavLink} to={::this.handleLink(menu.url)}>
           {menu.title}
         </NavLink>
       </NavItem>
