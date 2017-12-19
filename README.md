@@ -66,4 +66,4 @@ npm run dev
 * ```npm run webpack:dev``` - run the webpack in dev mode.
 
 ## License
-Licensed under [MIT](https://opensource.org/licenses/mit-license.php).
+Licensed under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
