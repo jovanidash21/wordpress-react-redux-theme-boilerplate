@@ -37,7 +37,7 @@ npm run dev
 
 ## WordPress Plugins
 * [Advanced Custom Fields](https://www.advancedcustomfields.com/).
-* [WP API Menus](https://wordpress.org/plugins/wp-api-menus/).
+* [WP REST API Extension](https://github.com/jovanidash21/wp-rest-api-extension-plugin/).
 
 ## Gulp Tasks
 * ```gulp``` - clean all the dist directory files and run all build tasks.
