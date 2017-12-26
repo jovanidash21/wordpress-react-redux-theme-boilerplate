@@ -18,7 +18,7 @@ const menu = (state=initialState, action) => {
         ...state,
         isLoading: false,
         data: [
-          ...state.data,
+          ...state.data.filter((menuData) => menuData.menuLocation !== action.meta),
           {
             menuLocation: action.meta,
             menuStructure: action.payload.data
