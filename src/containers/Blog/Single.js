@@ -21,7 +21,6 @@ class BlogSingle extends Component {
   }
   render() {
     const { post } = this.props;
-    const title = `${WP_REACT_REDUX.siteName} | Blog`;
 
     return (
       <div>

@@ -21,7 +21,6 @@ class WorkSingle extends Component {
   }
   render() {
     const { post } = this.props;
-    const title = `${WP_REACT_REDUX.siteName} | Work`;
 
     return (
       <div>
