@@ -9,6 +9,7 @@ if ( ! class_exists( 'ACF_Configuration' ) ) {
 			add_filter( 'acf/settings/show_admin', array( $this, 'show_hide_acf_menu' ) );
 			add_action( 'init', array( $this, 'load_dynamic_choices' ) );
 			add_action( 'admin_init', array( $this, 'load_acf_fields' ) );
+			add_action( 'init', array( $this, 'add_options_page' ) );
 		}
 
 		/**
@@ -113,7 +114,7 @@ if ( ! class_exists( 'ACF_Configuration' ) ) {
 			foreach ( $groups as $group ) {
 				$json_file = trailingslashit( $json_dir ) . $group['key'] . '.json';
 
-				if ( ! is_readable( $json_file ) ) {
+				if ( !is_readable( $json_file ) ) {
 					$delete[] = $group['key'];
 				}
 			}
@@ -122,6 +123,23 @@ if ( ! class_exists( 'ACF_Configuration' ) ) {
 				foreach ( $delete as $group_key ) {
 					acf_delete_field_group( $group_key );
 				}
+			}
+		}
+
+		/**
+		 * Add options page
+		 */
+		public function add_options_page() {
+			if ( current_user_can( 'manage_options' ) && function_exists( 'acf_add_options_page' ) ) {
+				acf_add_options_page( array(
+					'page_title'    => 'Theme Settings',
+					'menu_title'    => 'Theme Settings',
+					'menu_slug'     => 'theme-settings',
+					'capability'    => 'edit_posts',
+					'icon_url'      => 'dashicons-art',
+					'update_button' => 'Save Settings',
+					'redirect'      => false,
+				) );
 			}
 		}
 	}
