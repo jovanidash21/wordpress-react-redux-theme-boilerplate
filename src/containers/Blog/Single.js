@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Jumbotron } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
 import { fetchPost } from '../../actions/post';
@@ -10,7 +11,9 @@ class BlogSingle extends Component {
     super(props);
   }
   componentWillMount() {
-    this.props.dispatch(fetchPost('blog', this.props.match.params.slug));
+    const { fetchPost } = this.props;
+
+    fetchPost('blog', this.props.match.params.slug);
   }
   handleHeadData(headTitle) {
     const title = `${headTitle} | Blog | ${WP_REACT_REDUX.siteName}`;
@@ -54,6 +57,13 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchPost
+  }, dispatch);
+}
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(BlogSingle);

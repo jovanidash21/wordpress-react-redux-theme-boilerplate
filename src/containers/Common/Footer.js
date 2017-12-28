@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import { fetchMenu } from '../../actions/menu';
 import MenuItem from '../../components/Footer/MenuItem';
@@ -10,7 +11,9 @@ class Footer extends Component {
     super(props);
   }
   componentWillMount() {
-    this.props.dispatch(fetchMenu('footer'));
+    const { fetchMenu } = this.props;
+
+    fetchMenu('footer');
   }
   render() {
     const { menu } = this.props;
@@ -57,6 +60,13 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchMenu
+  }, dispatch);
+}
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Footer);

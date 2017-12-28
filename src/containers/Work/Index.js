@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Jumbotron } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
 import { fetchPage } from '../../actions/page';
@@ -12,8 +13,13 @@ class Work extends Component {
     super(props);
   }
   componentWillMount() {
-    this.props.dispatch(fetchPage('work'));
-    this.props.dispatch(fetchPosts('work'));
+    const {
+      fetchPage,
+      fetchPosts
+    } = this.props;
+
+    fetchPage('work');
+    fetchPosts('work');
   }
   handleHeadData(headTitle) {
     const title = `${headTitle} | ${WP_REACT_REDUX.siteName}`;
@@ -67,6 +73,14 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchPage,
+    fetchPosts
+  }, dispatch);
+}
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Work);

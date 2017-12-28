@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import {
   Collapse,
@@ -20,7 +21,9 @@ class Header extends Component {
     };
   }
   componentWillMount() {
-    this.props.dispatch(fetchMenu('primary'));
+    const { fetchMenu } = this.props;
+
+    fetchMenu('primary');
   }
   handleNavBarToggle() {
     this.setState({isOpen: !this.state.isOpen});
@@ -68,6 +71,13 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchMenu
+  }, dispatch);
+}
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Header);
