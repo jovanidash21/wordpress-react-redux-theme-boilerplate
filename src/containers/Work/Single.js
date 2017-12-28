@@ -11,9 +11,12 @@ class WorkSingle extends Component {
     super(props);
   }
   componentWillMount() {
-    const { fetchPost } = this.props;
+    const {
+      match,
+      fetchPost
+    } = this.props;
 
-    fetchPost('work', this.props.match.params.slug);
+    fetchPost('work', match.params.slug);
   }
   handleHeadData(headTitle) {
     const title = `${headTitle} | Work | ${WP_REACT_REDUX.siteName}`;

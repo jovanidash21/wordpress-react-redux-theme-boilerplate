@@ -11,9 +11,12 @@ class BlogSingle extends Component {
     super(props);
   }
   componentWillMount() {
-    const { fetchPost } = this.props;
+    const {
+      match,
+      fetchPost
+    } = this.props;
 
-    fetchPost('blog', this.props.match.params.slug);
+    fetchPost('blog', match.params.slug);
   }
   handleHeadData(headTitle) {
     const title = `${headTitle} | Blog | ${WP_REACT_REDUX.siteName}`;
