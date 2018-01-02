@@ -9,7 +9,7 @@ import {
   NavbarBrand,
   Nav
 } from 'reactstrap';
-import { fetchMenu } from '../../actions/menu';
+import mapDispatchToProps from '../../actions';
 import MenuItem from '../../components/Header/MenuItem';
 
 class Header extends Component {
@@ -69,12 +69,6 @@ const mapStateToProps = (state) => {
   return {
     menu: state.menu
   }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchMenu
-  }, dispatch);
 }
 
 export default connect(

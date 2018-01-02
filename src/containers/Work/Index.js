@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Jumbotron } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
-import { fetchPage } from '../../actions/page';
-import { fetchPosts } from '../../actions/post';
+import mapDispatchToProps from '../../actions';
 import Head from '../../components/Head';
 import PostList from '../../components/Post/PostList';
 
@@ -71,13 +70,6 @@ const mapStateToProps = (state) => {
     page: state.page,
     post: state.post
   }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchPage,
-    fetchPosts
-  }, dispatch);
 }
 
 export default connect(

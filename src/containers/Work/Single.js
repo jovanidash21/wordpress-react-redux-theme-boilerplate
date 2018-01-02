@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Jumbotron } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
-import { fetchPost } from '../../actions/post';
+import mapDispatchToProps from '../../actions';
 import Head from '../../components/Head';
 
 class WorkSingle extends Component {
@@ -58,12 +58,6 @@ const mapStateToProps = (state) => {
   return {
     post: state.post
   }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchPost
-  }, dispatch);
 }
 
 export default connect(

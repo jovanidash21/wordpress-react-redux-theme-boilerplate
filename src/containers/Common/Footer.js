@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import { fetchMenu } from '../../actions/menu';
+import mapDispatchToProps from '../../actions';
 import MenuItem from '../../components/Footer/MenuItem';
 require('../../styles/Footer.scss');
 
@@ -58,12 +58,6 @@ const mapStateToProps = (state) => {
   return {
     menu: state.menu
   }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchMenu
-  }, dispatch);
 }
 
 export default connect(

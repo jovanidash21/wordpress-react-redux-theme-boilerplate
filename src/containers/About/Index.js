@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Jumbotron } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
-import { fetchPage } from '../../actions/page';
+import mapDispatchToProps from '../../actions';
 import Head from '../../components/Head';
 
 class About extends Component {
@@ -53,12 +53,6 @@ const mapStateToProps = (state) => {
   return {
     page: state.page
   }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchPage
-  }, dispatch);
 }
 
 export default connect(
