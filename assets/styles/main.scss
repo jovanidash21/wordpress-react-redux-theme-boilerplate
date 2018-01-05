@@ -1,3 +1,8 @@
+// Bootstrap main SCSS
+@import "../../bower_components/bootstrap/scss/functions";
+@import "../../bower_components/bootstrap/scss/variables";
+@import "../../bower_components/bootstrap/scss/mixins";
+
 // Common SCSS
 @import "common/variables";
 @import "common/mixins";
