@@ -74,6 +74,10 @@ if ( ! class_exists( 'ACF_Configuration' ) ) {
 				return;
 			}
 
+			if ( ! function_exists( 'acf_get_field_groups' ) ) {
+				return;
+			}
+
 			if ( empty($groups = acf_get_field_groups()) ) {
 				return;
 			}
