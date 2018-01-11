@@ -12,7 +12,7 @@ body {
   overflow-y: scroll;
 }
 #wpadminbar {
-  @media (max-width: 600px) {
+  @media (max-width: $wp-admin-screen-xs-max) {
     position: fixed;
   }
 }
