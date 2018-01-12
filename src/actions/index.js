@@ -1,4 +1,5 @@
 import { bindActionCreators } from 'redux';
+import { fetchOptions } from './options';
 import { fetchMenu } from './menu';
 import {
   fetchPages,
@@ -11,6 +12,7 @@ import {
 
 const actions = (dispatch) => {
   return bindActionCreators({
+    fetchOptions,
     fetchMenu,
     fetchPages,
     fetchPage,
