@@ -1,6 +1,7 @@
 <?php
 $libraries = [
-  'lib/init.php',
+  'lib/setup.php',
+  'lib/post-type.php',
   'lib/acf.php',
   'lib/assets.php'
 ];
