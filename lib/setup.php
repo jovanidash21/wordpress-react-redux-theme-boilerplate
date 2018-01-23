@@ -1,4 +1,5 @@
 <?php
+
 function setup() {
 
   // Register nav menus
@@ -21,5 +22,7 @@ function setup() {
   add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ] );
 
 }
+
 add_action( 'after_setup_theme', 'setup' );
+
 ?>

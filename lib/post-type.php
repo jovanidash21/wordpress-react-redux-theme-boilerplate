@@ -1,4 +1,5 @@
 <?php
+
 function cpt_register_blog() {
   $post_type = 'cpt-blog';
   $rest_base = 'blog';
@@ -109,3 +110,5 @@ function cpt_register() {
 }
 
 add_action( 'init', 'cpt_register' );
+
+?>
