@@ -37,7 +37,7 @@ class PostList extends Component {
   }
 }
 
-PostList.propTypes={
+PostList.propTypes = {
   post: PropTypes.object.isRequired
 }
 

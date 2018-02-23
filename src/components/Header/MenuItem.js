@@ -16,7 +16,7 @@ const MenuItem = (props) => {
   )
 }
 
-MenuItem.propTypes={
+MenuItem.propTypes = {
   menu: PropTypes.object.isRequired
 }
 
