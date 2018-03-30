@@ -60,7 +60,7 @@
     "jshint-stylish": "^2.2.1",
     "lazypipe": "^1.0.1",
     "merge-stream": "^1.0.1",
-    "moment": "^2.19.1",
+    "moment": "^2.21.0",
     "moment-timezone": "^0.5.13",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
