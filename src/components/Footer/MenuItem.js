@@ -5,9 +5,17 @@ import { Link } from 'react-router-dom';
 const MenuItem = (props) => {
   return (
     <li>
-      <Link to={props.menu.path}>
-        {props.menu.title}
-      </Link>
+      {
+        props.menu.type !== 'custom'
+          ?
+          <Link to={props.menu.path}>
+            {props.menu.title}
+          </Link>
+          :
+          <a href={props.menu.path}>
+            {props.menu.title}
+          </a>
+      }
     </li>
   )
 }

@@ -9,7 +9,22 @@ import {
 const MenuItem = (props) => {
   return (
     <NavItem>
-      <NavLink tag={RRNavLink} to={props.menu.path}>
+      <NavLink
+        {
+          ...(
+            props.menu.type !== 'custom'
+              ?
+              {
+                tag: RRNavLink,
+                to: props.menu.path
+              }
+              :
+              {
+                href: props.menu.path
+              }
+          )
+        }
+      >
         {props.menu.title}
       </NavLink>
     </NavItem>
