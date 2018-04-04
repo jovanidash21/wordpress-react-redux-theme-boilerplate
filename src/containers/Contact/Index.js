@@ -30,14 +30,15 @@ class Contact extends Component {
         <div className="container">
           <Jumbotron>
             {
-              page.data &&
-              page.data.map((data, i) =>
+              'contact' in page.singlePage &&
+              page.singlePage.contact.length > 0 &&
+              page.singlePage.contact.map((pageData, i) =>
                 <div key={i}>
                   <h2 className="display-3">
-                    {data.title.rendered}
+                    {pageData.title.rendered}
                   </h2>
                   <hr className="my-2" />
-                  {ReactHtmlParser(data.content.rendered)}
+                  {ReactHtmlParser(pageData.content.rendered)}
                 </div>
               )
             }

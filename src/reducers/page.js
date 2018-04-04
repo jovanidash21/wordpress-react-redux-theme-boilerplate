@@ -6,7 +6,8 @@ import {
 const initialState = {
   isLoading: false,
   isError: false,
-  data: []
+  allPages: [],
+  singlePage: {}
 };
 
 const page = (state=initialState, action) => {
@@ -18,11 +19,19 @@ const page = (state=initialState, action) => {
         isLoading: true
       };
     case `${FETCH_PAGES}_SUCCESS`:
+      return {
+        ...state,
+        isLoading: false,
+        allPages: action.payload.data
+      };
     case `${FETCH_PAGE}_SUCCESS`:
       return {
         ...state,
         isLoading: false,
-        data: action.payload.data
+        singlePage: {
+          ...state.singlePage,
+          [action.meta]: action.payload.data
+        }
       };
     case `${FETCH_PAGES}_ERROR`:
     case `${FETCH_PAGE}_ERROR`:

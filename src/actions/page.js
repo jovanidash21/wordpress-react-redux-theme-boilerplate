@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { 
+import {
   FETCH_PAGES,
   FETCH_PAGE
 } from '../constants/page';
@@ -22,7 +22,8 @@ export function fetchPage(slug) {
   return dispatch => {
     return dispatch({
       type: FETCH_PAGE,
-      payload: axios.get(`/wp-json/wp/v2/pages/?slug=${slug}`)
+      payload: axios.get(`/wp-json/wp/v2/pages/?slug=${slug}`),
+      meta: slug
     })
     .catch((error) => {
       if (error instanceof Error) {
