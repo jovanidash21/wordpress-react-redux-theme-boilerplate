@@ -32,17 +32,17 @@ class BlogSingle extends Component {
         <div className="container">
           <Jumbotron>
             {
-              post.data &&
-              post.data.map((data, i) =>
+              post.singlePost.length > 0 &&
+              post.singlePost.map((postData, i) =>
                 <div key={i}>
                   <h3>Blog</h3>
                   <hr className="my-2" />
                   <h2 className="display-3">
-                    {data.title.rendered}
-                    {::this.handleHeadData(data.title.rendered)}
+                    {postData.title.rendered}
+                    {::this.handleHeadData(postData.title.rendered)}
                   </h2>
                   <hr className="my-2" />
-                  {ReactHtmlParser(data.content.rendered)}
+                  {ReactHtmlParser(postData.content.rendered)}
                 </div>
               )
             }

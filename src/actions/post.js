@@ -8,7 +8,8 @@ export function fetchPosts(postType) {
   return dispatch => {
     return dispatch({
       type: FETCH_POSTS,
-      payload: axios.get(`/wp-json/wp/v2/${postType}`)
+      payload: axios.get(`/wp-json/wp/v2/${postType}`),
+      meta: postType
     })
     .catch((error) => {
       if (error instanceof Error) {

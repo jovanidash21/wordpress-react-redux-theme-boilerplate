@@ -51,11 +51,12 @@ class Blog extends Component {
               )
             }
             {
-              post.data &&
+              'blog' in post.allPosts &&
+              post.allPosts.blog.length > 0 &&
               <div>
                 <hr className="my-2" />
                 <h3>Blog List</h3>
-                <PostList post={post} />
+                <PostList post={post.allPosts.blog} />
               </div>
             }
           </Jumbotron>

@@ -25,9 +25,9 @@ class PostList extends Component {
     return (
       <ListGroup>
         {
-          post.data.map((data, i) =>
+          post.map((data, i) =>
             <ListGroupItem key={i} to={::this.handleLink(data.link)} tag={Link}>
-                {data.title.rendered}
+              {data.title.rendered}
             </ListGroupItem>
           )
         }
@@ -38,7 +38,7 @@ class PostList extends Component {
 }
 
 PostList.propTypes = {
-  post: PropTypes.object.isRequired
+  post: PropTypes.array.isRequired
 }
 
 export default PostList;

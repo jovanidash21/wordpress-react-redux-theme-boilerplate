@@ -51,11 +51,12 @@ class Work extends Component {
               )
             }
             {
-              post.data &&
+              'work' in post.allPosts &&
+              post.allPosts.work.length > 0 &&
               <div>
                 <hr className="my-2" />
                 <h3>Work List</h3>
-                <PostList post={post} />
+                <PostList post={post.allPosts.work} />
               </div>
             }
           </Jumbotron>
