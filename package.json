@@ -35,6 +35,7 @@
     "css-loader": "^0.28.7",
     "del": "^3.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-cache": "^0.4.6",
