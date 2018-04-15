@@ -10,7 +10,8 @@
     "url": "https://github.com/jovanidash21/wordpress-react-redux-theme-boilerplate.git"
   },
   "scripts": {
-    "build": "run-s gulp:prod webpack:prod",
+    "start": "run-s gulp:prod webpack:prod",
+    "build": "cross-env NODE_ENV=production run-s gulp:prod webpack:prod",
     "dev": "run-p gulp:dev webpack:dev",
     "gulp:prod": "gulp --production",
     "gulp:dev": "gulp watch",
