@@ -8,11 +8,35 @@ const MenuItem = (props) => {
       {
         props.menu.type !== 'custom'
           ?
-          <Link to={props.menu.path}>
+          <Link
+            to={props.menu.path}
+            {
+              ...(
+                props.menu.target.length > 0
+                  ?
+                  {
+                    target: props.menu.target
+                  }
+                  : ''
+              )
+            }
+          >
             {props.menu.title}
           </Link>
           :
-          <a href={props.menu.path}>
+          <a
+            href={props.menu.path}
+            {
+              ...(
+                props.menu.target.length > 0
+                  ?
+                  {
+                    target: props.menu.target
+                  }
+                  : ''
+              )
+            }
+          >
             {props.menu.title}
           </a>
       }

@@ -24,6 +24,16 @@ const MenuItem = (props) => {
               }
           )
         }
+        {
+          ...(
+            props.menu.target.length > 0
+              ?
+              {
+                target: props.menu.target
+              }
+              : ''
+          )
+        }
       >
         {props.menu.title}
       </NavLink>
