@@ -37,6 +37,7 @@ npm run dev
 
 ## WordPress Plugins
 * [Advanced Custom Fields](https://www.advancedcustomfields.com/).
+* [ACF to REST API](https://wordpress.org/plugins/acf-to-rest-api/).
 * [WP REST API Extension](https://github.com/jovanidash21/wp-rest-api-extension-plugin/).
 
 ## Gulp Tasks
