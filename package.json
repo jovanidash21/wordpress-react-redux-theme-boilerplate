@@ -54,7 +54,6 @@
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-real-favicon": "^0.2.2",
-    "gulp-rename": "^1.2.2",
     "gulp-rev": "^8.0.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.6.1",
