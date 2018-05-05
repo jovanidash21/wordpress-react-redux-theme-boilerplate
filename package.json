@@ -59,6 +59,7 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-strip-comments": "^2.5.1",
     "gulp-uglify": "^3.0.0",
+    "gulp-wp-rev": "^0.3.0",
     "history": "^4.7.2",
     "jshint": "^2.9.5",
     "jshint-stylish": "^2.2.1",
