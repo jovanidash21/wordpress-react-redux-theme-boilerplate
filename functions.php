@@ -3,7 +3,8 @@ $libraries = [
   'lib/setup.php',
   'lib/post-type.php',
   'lib/acf.php',
-  'lib/assets.php'
+  'lib/assets.php',
+  'lib/revision.php'
 ];
 
 foreach ( $libraries as $lib ) {

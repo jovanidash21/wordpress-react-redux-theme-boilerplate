@@ -23,7 +23,7 @@ var jsTasks = function (filename) {
     })();
 };
 
-gulp.task('scripts', ['lint'], function () {
+gulp.task('scripts', ['lint', 'rev'], function () {
   var merged = merge();
   config.manifest.forEachDependency('js', function (dep) {
     merged.add(
