@@ -17,6 +17,7 @@ const options = (state=initialState, action) => {
       return {
         ...state,
         isLoading: false,
+        isSuccess: true,
         data: action.payload.data
       };
     case `${FETCH_OPTIONS}_ERROR`:
