@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import mapDispatchToProps from '../../actions';
-import MenuItem from '../../components/Footer/MenuItem';
+import { MenuItem } from '../../components/Footer';
 require('../../styles/Footer.scss');
 
 class Footer extends Component {

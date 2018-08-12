@@ -9,7 +9,7 @@ import {
   Nav
 } from 'reactstrap';
 import mapDispatchToProps from '../../actions';
-import MenuItem from '../../components/Header/MenuItem';
+import { MenuItem } from '../../components/Header';
 
 class Header extends Component {
   constructor(props) {

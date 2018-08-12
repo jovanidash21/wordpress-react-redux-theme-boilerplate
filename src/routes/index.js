@@ -1,14 +1,18 @@
 import React from 'react';
 import { Switch } from 'react-router';
 import Layout from '../containers/Layout';
-import Home from '../containers/Home';
-import Work from '../containers/Work';
-import WorkSingle from '../containers/Work/Single';
-import Blog from '../containers/Blog';
-import BlogSingle from '../containers/Blog/Single';
-import About from '../containers/About';
-import Contact from '../containers/Contact';
-import NotFound from '../containers/NotFound';
+import { Home } from '../containers/Home';
+import {
+  Work,
+  WorkSingle
+} from '../containers/Work';
+import {
+  Blog,
+  BlogSingle
+} from '../containers/Blog';
+import { About } from '../containers/About';
+import { Contact } from '../containers/Contact';
+import { NotFound } from '../containers/NotFound';
 
 const routes = (
   <div>
