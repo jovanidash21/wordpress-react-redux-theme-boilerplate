@@ -10,16 +10,13 @@ const extractSassBundle = new ExtractTextPlugin({
   disable: false,
 });
 
-const webpackConfig = {
-  devtool: 'source-map',
+module.exports = {
   entry: [
     './src/index.js',
   ],
-  output: {
-    path: path.join(__dirname, '/dist/build'),
-    publicPath: '/',
-    filename: 'bundle.js',
-  },
+  plugins: [
+    extractSassBundle,
+  ],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -105,15 +102,9 @@ const webpackConfig = {
       },
     ],
   },
-  plugins: [
-    extractSassBundle,
-  ],
-};
-
-module.exports = function(env) {
-  if ((env && env.minimize) || process.env.NODE_ENV === 'production') {
-    webpackConfig.devtool = false;
-  }
-
-  return webpackConfig;
+  output: {
+    path: path.join(__dirname, '/dist/build'),
+    publicPath: '/',
+    filename: 'bundle.js',
+  },
 };
